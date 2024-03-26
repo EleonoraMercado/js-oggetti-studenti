@@ -1,9 +1,4 @@
 
-// Ciclare su tutti gli studenti e stampare per ognuno di essi tutte le proprietà nome, cognome, eta
-// prima ciclate con un ciclo for
-// poi commentate il ciclo for e usate il forEach
-
-
 // Creare un array di oggetti di studenti.
 // Ogni oggetto studente deve avere tre proprietà: nome, cognome, eta
 // Ciclare su tutti gli studenti e stampare, per ognuno di essi, nome e cognome.
@@ -54,28 +49,46 @@ console.log(studenti); //function
 
 // poi commentate il ciclo for e usate il forEach
 studenti.forEach(function (studente) {
-console.log(studente.nome + " " + studente.cognome)
+ console.log(studente.nome + " " + studente.cognome)
 });     //metodo
 
 // MILESTONE 2
 // Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
 
-//  document.getElementById('formNuoviStudenti').addEventListener('submit', function(event) {
-//      event.preventDefault();
+ document.getElementById('formNuoviStudenti').addEventListener('submit', function(event) {
+     event.preventDefault();
 
-//      //recuper i valori dei form
-//      let nomeElement = document.getElementById(formNome).value;
-//      let cognomeElement = document.getElementById(formCognome).value;
-//      let etaElement = parseFloat(document.getElementById(formEta).value);
+     //recuper i valori dei form
+     let nomeElement = document.getElementById('formNome').value;
+     let cognomeElement = document.getElementById('formCognome').value;
+     let etaElement = parseFloat(document.getElementById('formEta').value);
 
-// Aggiungere il nuovo studente all’array di studenti
-// for (let i = 0; i < studenti.length; i++) {
-//     const nuoviStudenti = studenti[i];
-//     studenti.push(nuoviStudenti);
-//     console.log(nuoviStudenti)
-// }
 
-//  });
+    //creo un nuovo oggetto studente
+     const nuovoStudente = {
+
+        nome: nomeElement,
+        cognome: cognomeElement,
+        eta: etaElement,
+    };
+
+     //aggiungo il nuovo studente all'array di studenti
+     studenti.push(nuovoStudente);
+
+    // Ciclare su tutti gli studenti e stampare per ognuno di essi tutte le proprietà nome, cognome, eta
+    // prima ciclate con un ciclo for
+    // for (let i = 0; i < studenti.length; i++) {
+    //     console.log(studenti[i].nome + " " + studenti[i].cognome);
+
+    // }
+
+    // poi commentate il ciclo for e usate il forEach
+    studenti.forEach(function (studente) {
+        console.log(studente.nome + " " + studente.cognome);
+    });
+
+
+ });
 
 
 
