@@ -34,12 +34,40 @@
                                 <th>Age</th>
                             </tr>
                         </thead>
-                        <tbody class="table-group-divider">
-                           
-                        </tbody>
+                        <tbody id="table-body" class="table-group-divider"></tbody>
                     </table>
                 </div>
                 
+            </div>
+        </section>
+        <section class="pb-5">
+            <div class="container">
+                <h2>Add a new student</h2>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form action="" id="formNewStudents">
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label">First name</label>
+                                <input type="text" class="form-control" id="firstName">
+                              </div>
+                              <div class="mb-3">
+                                <label for="lastName" class="form-label">Last name</label>
+                                <input type="text" class="form-control" id="lastName">
+                              </div>
+                              <div class="mb-3">
+                                <label for="age" class="form-label">Age</label>
+                                <input type="number" class="form-control" id="age">
+                              </div>
+
+                              <button id="submit" class="btn btn-primary">
+                                Aggiungi
+                              </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
