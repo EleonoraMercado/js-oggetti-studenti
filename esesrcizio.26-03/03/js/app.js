@@ -65,3 +65,31 @@ console.log(trHTMLString);
     tBodyElement.innerHTML += trHTMLString; 
     //promemoria:+= di modo che gli elementi non sis sovrascrivano ma che se ne aggiunga uno nuovo.
 };
+
+//togliamo il comportamento di default del bottone
+document.getElementById('formNewStudents').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+     //recuper i valori dei form
+     let firstNameElement = document.getElementById('firstName').value;
+     let lastNameElement = document.getElementById('lastName').value;
+     let ageElement = parseFloat(document.getElementById('age').value);
+
+      //creo un nuovo oggetto studente
+      const newStudent = {
+
+        firstName: firstNameElement,
+        lastName: lastNameElement,
+        age: ageElement,
+    };
+
+    //aggiungo il nuovo studente all'array di studenti
+    students.push(newStudent);
+
+    //stampare i nuovi studenti nella tabella
+
+
+
+
+
+});
