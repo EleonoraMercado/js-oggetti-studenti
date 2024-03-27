@@ -66,30 +66,43 @@ console.log(trHTMLString);
     //promemoria:+= di modo che gli elementi non sis sovrascrivano ma che se ne aggiunga uno nuovo.
 };
 
-//togliamo il comportamento di default del bottone
-document.getElementById('formNewStudents').addEventListener('submit', function(event) {
-    event.preventDefault();
+const form = document.getElementById('formAddStudents');
+console.log(form)
+form.addEventListener('submit', addStudent);
 
-     //recuper i valori dei form
-     let firstNameElement = document.getElementById('firstName').value;
-     let lastNameElement = document.getElementById('lastName').value;
-     let ageElement = parseFloat(document.getElementById('age').value);
+//funzione che accetta un parametro di tipo evento
+function addStudent(e) {
 
-      //creo un nuovo oggetto studente
-      const newStudent = {
+//disabilitare la propagazione del submit
+e.preventDefault();
 
-        firstName: firstNameElement,
-        lastName: lastNameElement,
-        age: ageElement,
-    };
+//recuperiamo i singoli input per recuperare il valore che viene inserito 
+//alla compilazione del form
+const theFirstName = document.getElementById('firstName').value;
+const theLastName = document.getElementById('lastName').value;
+const theAge = document.getElementById('age').value;
 
-    //aggiungo il nuovo studente all'array di studenti
-    students.push(newStudent);
+//con i valori si costruisce l'oggetto studente
+const newStudent = {
+    firstName: theFirstName,
+    lastName: theLastName,
+    Age : theAge,
 
-    //stampare i nuovi studenti nella tabella
+};
+console.log(newStudent)
 
+//devo pushare il nuovo studente nell'array
+students.push(newStudent)
 
+console.log(students)
 
-
-
-});
+const tBodyElement = document.getElementById('table-body');
+const trHTMLString = `
+    <tr>
+      <td>${theFirstName}</td>
+      <td>${theLastName}</td>
+      <td>${theAge}</td>
+    </tr>
+    ` 
+    tBodyElement.innerHTML += trHTMLString; 
+}
