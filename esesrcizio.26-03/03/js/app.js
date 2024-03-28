@@ -53,7 +53,7 @@ for (i = 0; i < students.length; i++) {
 
     console.log(theFirstName, theLastName, theAge);
 
-    if (currentStudent.age < 18) {
+    // if (currentStudent.age > 18) {
     //creiamo il tag html per ogni tr:
     const trHTMLString = `
     <tr>
@@ -66,7 +66,7 @@ console.log(trHTMLString);
     //aggiungiamo il tag nel tbody della tabella
     tBodyElement.innerHTML += trHTMLString; 
     //promemoria:+= di modo che gli elementi non sis sovrascrivano ma che se ne aggiunga uno nuovo.
-    }
+    // }
 };
 
 const form = document.getElementById('formAddStudents');
