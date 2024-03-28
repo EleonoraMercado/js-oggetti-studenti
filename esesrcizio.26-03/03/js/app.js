@@ -2,7 +2,7 @@ const students = [
     {
         firstName: 'Giulia',
         lastName: 'Ferri',
-        age: 22,
+        age: 17,
     },
     {
         firstName: 'Andrea',
@@ -17,7 +17,7 @@ const students = [
     {
         firstName: 'Francesco',
         lastName: 'Russo',
-        age: 23,
+        age: 15,
     },
     {
         firstName: 'Sara',
@@ -27,12 +27,12 @@ const students = [
     {
         firstName: 'Lorenzo',
         lastName: 'Bianchi',
-        age: 21,
+        age: 13,
     },
     {
         firstName: 'Chiara',
         lastName: 'Esposito',
-        age: 19,
+        age: 16,
     },
 ];  //array
  console.log(students)
@@ -52,6 +52,8 @@ for (i = 0; i < students.length; i++) {
     const theAge = currentStudent.age;
 
     console.log(theFirstName, theLastName, theAge);
+
+    if (currentStudent.age < 18) {
     //creiamo il tag html per ogni tr:
     const trHTMLString = `
     <tr>
@@ -64,6 +66,7 @@ console.log(trHTMLString);
     //aggiungiamo il tag nel tbody della tabella
     tBodyElement.innerHTML += trHTMLString; 
     //promemoria:+= di modo che gli elementi non sis sovrascrivano ma che se ne aggiunga uno nuovo.
+    }
 };
 
 const form = document.getElementById('formAddStudents');
