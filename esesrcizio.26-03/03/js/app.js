@@ -53,8 +53,6 @@ for (i = 0; i < students.length; i++) {
 
     console.log(theFirstName, theLastName, theAge);
 
-    // if (currentStudent.age > 18) {
-    //creiamo il tag html per ogni tr:
     const trHTMLString = `
     <tr>
       <td>${theFirstName}</td>
@@ -66,7 +64,6 @@ console.log(trHTMLString);
     //aggiungiamo il tag nel tbody della tabella
     tBodyElement.innerHTML += trHTMLString; 
     //promemoria:+= di modo che gli elementi non sis sovrascrivano ma che se ne aggiunga uno nuovo.
-    // }
 };
 
 const form = document.getElementById('formAddStudents');
@@ -81,9 +78,9 @@ e.preventDefault();
 
 //recuperiamo i singoli input per recuperare il valore che viene inserito 
 //alla compilazione del form
-const theFirstName = document.getElementById('firstName').value;
-const theLastName = document.getElementById('lastName').value;
-const theAge = document.getElementById('age').value;
+ const theFirstName = document.getElementById('firstName').value;
+ const theLastName = document.getElementById('lastName').value;
+ const theAge = document.getElementById('age').value;
 
 //con i valori si costruisce l'oggetto studente
 const newStudent = {
@@ -108,4 +105,12 @@ const trHTMLString = `
     </tr>
     ` 
     tBodyElement.innerHTML += trHTMLString; 
+
+    //svuotare il form
+    document.getElementById('firstName').value = ''
+    document.getElementById('lastName').value = ''
+    document.getElementById('age').value = ''
+
 }
+
+
